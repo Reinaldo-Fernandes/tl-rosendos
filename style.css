@@ -1,0 +1,230 @@
+/* --- ESTILOS GERAIS --- */
+:root {
+    --eventos-bg: #F8F8F8; /* Branco gelo */
+    --eventos-text: #222; /* Preto fosco */
+    --buffet-bg: #111; /* Preto profundo */
+    --buffet-text: #FFF; /* Branco puro */
+    --buffet-gold: #D4A017; /* Amarelo queimado / Ouro */
+    
+    --font-serif: 'Bodoni Moda', serif;
+    --font-cursiva: 'Mea Culpa', cursive;
+    --font-text: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-text);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: var(--eventos-bg);
+    color: var(--eventos-text);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    position: fixed;
+    width: 90%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+nav a {
+    color: var(--eventos-text);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+section {
+    padding: 120px 5% 60px; /* Mais espaço no topo para o header fixo */
+    min-height: 80vh; /* Altura mínima da seção */
+}
+
+/* --- ESTILOS PARA TÍTULOS E CURSIVAS --- */
+.titulo-principal {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3em; /* Muito espaço entre letras */
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.titulo-principal-buffet {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 2.2rem;
+    color: var(--buffet-gold); /* Título em ouro */
+    margin-bottom: 5px;
+}
+
+.subtitulo-cursivo, .subtitulo-buffet-cursivo {
+    font-family: var(--font-cursiva);
+    font-size: 2rem;
+    margin-top: 0;
+    font-weight: 400;
+    color: #555;
+}
+
+.subtitulo-buffet-cursivo {
+    color: var(--buffet-gold); /* Cursiva em ouro */
+}
+
+.texto-apresentacao {
+    color: #555;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.texto-apresentacao-buffet {
+    color: #DDD;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+/* --- LAYOUT DE COLUNAS --- */
+.conteudo-eventos, .conteudo-buffet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coluna-texto {
+    flex: 0 0 45%;
+}
+
+.coluna-foto-eventos, .coluna-foto-buffet {
+    flex: 0 0 50%;
+}
+
+.coluna-foto-eventos img, .coluna-foto-buffet img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    border: 1px solid #CCC;
+}
+
+/* --- SEÇÃO ESPECÍFICA EVENTOS --- */
+.secao-eventos {
+    background-color: var(--eventos-bg);
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+.black-btn {
+    background-color: var(--eventos-text);
+    color: white;
+}
+
+.instagram-handle {
+    margin-top: 10px;
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* --- SEÇÃO ESPECÍFICA BUFFET --- */
+.secao-buffet {
+    background-color: var(--buffet-bg);
+}
+
+.gold-btn {
+    background-color: var(--buffet-gold);
+    color: var(--buffet-bg); /* Texto escuro no botão de ouro */
+}
+
+.instagram-handle-buffet {
+    margin-top: 10px;
+    color: var(--buffet-gold);
+    font-size: 0.8rem;
+}
+
+.texto-apresentacao-buffet.destacado {
+    font-weight: 700;
+    color: var(--buffet-gold);
+    border-left: 3px solid var(--buffet-gold);
+    padding-left: 15px;
+}
+
+/* --- SEÇÃO DA GALERIA --- */
+.secao-galeria {
+    background-color: white;
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.item-galeria {
+    overflow: hidden;
+    height: 300px;
+}
+
+.item-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #EEE;
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* --- RESPONSIVIDADE (MÓVEL) --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 5%;
+        width: 100%;
+    }
+    
+    nav {
+        margin-top: 10px;
+    }
+    
+    nav a {
+        margin: 0 10px;
+    }
+    
+    .conteudo-eventos, .conteudo-buffet {
+        flex-direction: column-reverse;
+    }
+    
+    .coluna-texto, .coluna-foto-eventos, .coluna-foto-buffet {
+        flex: 0 0 100%;
+    }
+    
+    section {
+        padding-top: 180px;
+    }
+}
